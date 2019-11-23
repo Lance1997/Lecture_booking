@@ -30,5 +30,18 @@ if (isset($_GET['logout'])) {
     <!-- My custom styles -->
     <link href="/lecture_2/assets/css/style.css" rel="stylesheet">
     <script src="node_modules/sweetalert/dist/sweetalert.min.js"> </script>
+    <script src="/lecture_2/assets/js/jquery-3.4.1.min.js"></script>
+    <script>
+    
+// Wait for window load
+	$(document).ready(function() {
+		// Animate loader off screen
+    $("#loader").fadeOut("slow");
+	});
+    </script>
   </head>
   <body id= "bg-img">
+    <div id="loader">
+      <img src="img/ucc_logo.png" style=" margin: 0;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="" id="pageLoader">
+    </div>
+  

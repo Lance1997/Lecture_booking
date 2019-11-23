@@ -246,7 +246,7 @@
 
     <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script src="/lecture_2/assets/js/jquery-3.4.1.min.js"></script>
+  
   <!-- Bootstrap tooltips popper -->
   <script src="/lecture_2/assets/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
