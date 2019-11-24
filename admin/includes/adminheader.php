@@ -18,6 +18,23 @@ if (isset($_GET['logout'])) {
 
  ?>
 
+<?php
+
+$time_to_unset = (60);
+if (!isset($_SESSION['timeout_idle'])) {
+    $_SESSION['timeout_idle'] = time() + ($time_to_unset);
+} else {
+    if ($_SESSION['timeout_idle'] < time()) {   
+        //destroy session
+        session_unset();
+        session_destroy();
+        header('location: ../login.php');
+    } else {
+        $_SESSION['timeout_idle'] = time() + ($time_to_unset);
+    }
+}
+?>
+
 
 <?php
 $roleadm = "admin";

@@ -2,7 +2,7 @@
 <?php
 
     if(isset($_POST['book_venue'])) {
-      $id = '0';
+      $id = $_SESSION['id'];
 
       $course_name =mysqli_real_escape_string($conn,trim($_POST['course_name']));
       $course_code =mysqli_real_escape_string($conn,trim($_POST['course_code']));

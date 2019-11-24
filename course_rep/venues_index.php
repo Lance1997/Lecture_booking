@@ -3,7 +3,7 @@
 
 <!-- Navbar file -->
 <?php require_once 'includes/adminnavbar.php'; ?>
-<div class="col-lg-12">
+<div class="col-lg-12" style="margin-top: 200px;" id="wrapper">
   <section>
 
     <div class="container cards-row" >
