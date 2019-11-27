@@ -11,7 +11,7 @@
     <!-- Main Content goes here -->
     <main>
 	<div id="home">
-	 <div class="main-image" style="background-image: url('img/home_bg.jpg'); background-position: 0px 0px;"></div>
+	 <div class="main-image" style="background-image: url('img/home_bg.jpg'); background-position: 0px 0px; width:100%;"></div>
 	  <div class="home-wrapper">
 			<!-- container -->
 			<div class="container">
@@ -22,7 +22,7 @@
 						<div class="home-content">
 							<h1>WELCOME TO LECTURE BOOKING</h1>
 							<h4 class="lead">Bringing the Lecture Theatre to your doorstep.</h4>
-							<p class="text-white"> Click here to <a href="#venues-view" class="main-btn font-weight-bold"> View </a>Booked and Available Venues</p>
+							<p  class="text-white"> Click here to <a href="#venues-view" class="main-btn font-weight-bold"> View </a>Booked and Available Venues</p>
 						</div>
 					</div> <!-- /home content -->
           <!-- //home colomn -->
@@ -101,7 +101,7 @@
             <div class="card-footer">
               <!-- Card-footer-->
   	           <a href="contact.php" class="btn btn-primary">Send Message</a>
-               <a href="faq.php" class="btn btn-primary">FAQs</a>
+               <a  id="about" href="faq.php" class="btn btn-primary">FAQs</a>
             </div>
             <!-- /Card-footer -->
         </div>
@@ -113,6 +113,9 @@
   </section>
 
       <!--End of HomePage Introduction -->
+
+      <!-- About Us -->
+      <?php include './about.php' ?>
 
 
       <?php include 'venues/venues_index.php' ?>
@@ -149,7 +152,7 @@
         					<div class="team_name">
                     <!-- Team member name-->
         						<h4>Elorm</h4>
-        						<p>Web UI Designer</p>
+        					
         					</div>
                   <!-- /team member name-->
         				</div>
@@ -175,7 +178,7 @@
         					<div class="team_name">
                     <!-- Team member name-->
         						<h4>Lance</h4>
-        						<p>Web UI/Backend Developer</p>
+        						
         					</div>
                   <!-- /team member name-->
         				</div>
@@ -201,7 +204,7 @@
         					<div class="team_name">
                     <!-- Team member name-->
         						<h4>Rockson</h4>
-        						<p>Team and Project Manager</p>
+        					
         					</div>
                   <!-- /team member name-->
         				</div>

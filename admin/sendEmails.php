@@ -1,5 +1,5 @@
 <?php
-require_once 'vendor/autoload.php';
+require_once './vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
@@ -9,7 +9,7 @@ $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
 // Create the Mailer using your created Transport
 $mailer = new Swift_Mailer($transport);
 
-function sendVerificationEmail($user_email, $user_token)
+function sendVerificationEmail($user_email, $user_token, $pwd)
 {
     global $mailer;
     $body = '<!DOCTYPE html>
@@ -41,6 +41,7 @@ function sendVerificationEmail($user_email, $user_token)
         
         <hr>
         <p> Click on the link velow to verify your email and register. <p>
+        <p> Your default password is '.$pwd.'.<b>Please remember to change this after logging in.</b> <p>
         <p> Thank you </p>
         <a href="http://localhost/lecture_2/admin_email.php?token=' . $user_token . '">Verify Email!</a>
       </div>

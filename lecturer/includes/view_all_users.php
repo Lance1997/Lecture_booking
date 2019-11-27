@@ -47,6 +47,7 @@ $query = "SELECT * FROM users WHERE rep_role = {$_SESSION['id']}";
 
     $query = "DELETE FROM users WHERE id = '{$del_user_id}'";
     $del_query = mysqli_query($conn,$query);
+    header('location: users.php');
 
   }
 

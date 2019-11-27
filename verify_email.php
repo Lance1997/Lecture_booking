@@ -26,7 +26,7 @@ if (isset($_GET['token'])) {
             $_SESSION['error_message'] = "A mail has been sent to your email account from <b>lanarmah@gmail.com</b>.
             Please verrify your account from your email.";
             $_SESSION['registered_message'] = "Your email has been successfully verified.";
-            $_SESSION['wait_message'] = "Please wait as admin verifies your identity and assign you a role as per the preferred user role you chose. An email will be sent to you upon successful verification. Click on it to login.";
+            $_SESSION['wait_message'] = "Please wait as admin verifies your identity and assign you a role as per the preferred user role you chose. Contact Admin if this process takes more than 24hours.";
 
             $_SESSION['alert-class'] = "alert-warning";
             

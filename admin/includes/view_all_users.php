@@ -56,6 +56,8 @@
 
     $query = "DELETE FROM users WHERE id = '{$del_user_id}'";
     $del_query = mysqli_query($conn,$query);
+    header('location: ./users.php');
+    exit();
 
   }
 

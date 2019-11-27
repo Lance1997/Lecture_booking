@@ -130,28 +130,40 @@
             echo '<option value="security">Security Guard</option>';
             echo '<option value="association">Association Executive</option>';
             echo '<option value="student">Student</option>';
+            echo '<option value="course_rep">Course Rep</option>';
           } elseif($user_role == 'admin') {
             echo '<option value="lecturer">Lecturer</option>';
             echo ' <option value="security">Security Guard</option>';
             echo '<option value="association">Association Executive</option>';
             echo '<option value="student">Student</option>';
+            echo '<option value="course_rep">Course Rep</option>';
           }
           elseif($user_role == 'association') {
             echo '<option value="lecturer">Lecturer</option>';
             echo ' <option value="security">Security Guard</option>';
             echo '<option value="admin">Admin</option>';
             echo '<option value="student">Student</option>';
+            echo '<option value="course_rep">Course Rep</option>';
           }
           elseif($user_role == 'security') {
             echo '<option value="lecturer">Lecturer</option>';
             echo ' <option value="association">Association Executive</option>';
             echo '<option value="admin">Admin</option>';
             echo '<option value="student">Student</option>';
-          } else {
+            echo '<option value="course_rep">Course Rep</option>';
+          }  elseif($user_role == 'course_rep') {
+            echo '<option value="lecturer">Lecturer</option>';
+            echo ' <option value="association">Association Executive</option>';
+            echo '<option value="admin">Admin</option>';
+            echo '<option value="student">Student</option>';
+            echo '<option value="security">Security</option>';
+          } 
+          else {
             echo '<option value="lecturer">Lecturer</option>';
             echo ' <option value="association">Association Executive</option>';
             echo '<option value="admin">Admin</option>';
             echo ' <option value="security">Security Guard</option>';
+            echo '<option value="course_rep">Course Rep</option>';
           }
 
          ?>

@@ -98,9 +98,9 @@ function sendVerificationEmailToAdmin($email, $userid, $preRole, $username)
       <div class="wrapper">
         <p>A user is trying to sign Up on Lecture Booking.com.</p>
         <p>The user has already verified his or her email address.</p>
-        <p> The user\'s ID is: <span class= "user-id">'.$userid. '</span>, has email <span class="user-id">' .$email. '</span>, Username: <span class= "user-id">'.$username. '</span> and
+        <p> The user\'s ID is: <span class= "user-id">'.$userid. '</span>, has email <span>' .$email. '</span>, Username: <span class= "user-id">'.$username. '</span> and
         wants to be assigned a <span class="user-id">'.$preRole.'</span> role.</p>
-        <p> Please Visit Site and Confirm User upon verification and assign the user a role. </p>
+        <p> Please Visit Site, confirm User upon verification and assign the user a role. </p>
         <hr>
 
         <a href="http://localhost/lecture_2/login.php">Login to Site!</a>

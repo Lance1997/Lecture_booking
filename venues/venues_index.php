@@ -2,7 +2,7 @@
 <section>
 
   <div class="container cards-row" >
-    <h1  id="venues-view" class = "text-center" style="padding:50px;">VENUES</h1>
+    <h1 class = "text-center" style="padding:50px;">VENUES</h1>
 	  <div class="card-deck">
       <!-- Card-row -->
 

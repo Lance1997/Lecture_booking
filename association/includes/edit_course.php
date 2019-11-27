@@ -76,10 +76,7 @@
     <input value="<?php echo $course_name ?>" type="text" name="course_name" class="form-control">
   </div>
 
-  <div class="form-group">
-    <label for="post_status">Venue Name<br> <small>Please ensure that name entered is in the following format: ie. G1, LT4, CELT5, AS. Venues entered in different formats will not display on timetable.</small></label>
-    <input value = "<?php echo $venue_name ?>" type="text" name="venue_code" class="form-control">
-  </div>
+  <?php include './includes/choose_venue.php'; ?>
 
   <div class="form-group">
     <label for="">Choose Day</label>

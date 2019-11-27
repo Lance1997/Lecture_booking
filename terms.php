@@ -1,3 +1,8 @@
+<!-- Header file -->
+<?php include_once 'api/header.php'; ?>
+
+<!-- Navbar file -->
+<?php include_once 'api/navbar.php'; ?>
 
 
 
@@ -22,7 +27,7 @@
 
 <main>
     <section>
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top: 50px">
           <h1>Terms and Conditions ("Terms")</h1>
 
 
@@ -87,7 +92,7 @@
 
           <h2>Contact Us</h2>
 
-          <p>If you have any questions about these Terms, please <a href='index.php#contact'>contact us. </a></p>
+          <p>If you have any questions about these Terms, please <a href='contact.php'>contact us </a> or refer to our Contact Information Below.</p>
 
         </div>
     </section>
@@ -95,27 +100,17 @@
 
 
 
-<!-- SHORT FOOTER -->
+<!-- Footer -->
+<?php include_once 'api/footer.php'; ?>
 
-<footer>
-  <div class="container">
-      <div class="copyright pull-left">
-          Copyright &copy; 2019 <span>Lecture Booking.com</span>
-      </div>
-  </div>
-
-
-</footer>
-
-
-<!-- SCRIPTS -->
-<!-- JQuery -->
-<script src="assets/js/jquery-3.4.1.min.js"></script>
-<!-- Bootstrap tooltips popper -->
-<script src="assets/js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- My custom JavaScript -->
-<script src="assets/js/main.js"></script>
-</body>
+ <!-- SCRIPTS -->
+  <!-- JQuery -->
+  
+  <!-- Bootstrap tooltips popper -->
+  <script src="/lecture_2/assets/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="/lecture_2/assets/js/bootstrap.min.js"></script>
+  <!-- My custom JavaScript -->
+  <script src="/lecture_2/assets/js/main.js"></script>
+  </body>
 </html>

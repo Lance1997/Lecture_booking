@@ -17,7 +17,7 @@
         <div class="alert alert-warning alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             This section contains a wealth of information, related to <strong>Lectue Booking.com</strong> and its services. If you cannot find an answer to your question,
-            make sure to <a href='contact.php'>contact us</a> or <a href='index.php#contact'>locate/call </a> us.
+            make sure to <a href='contact.php'>contact us</a> or <a href='#contact'>locate/call </a> us.
         </div>
 
         <br />
@@ -44,7 +44,7 @@
                 </div>
                 <div id="collapseTen" class="panel-collapse collapse">
                     <div class="card-block">
-                        <strong>Yes and No. </strong>. Only Administrators of site and certain users(Lecturers and Association Executives) of the site can make changes to the timetable.
+                        <strong>Yes and No. </strong>. Only Administrators of site and certain users(Lecturers, their Course Reps and Association Executives) of the site can make changes to the timetable.
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                 </div>
                 <div id="collapseEleven" class="panel-collapse collapse">
                     <div class="card-block">
-                        <strong>Administrators</strong> of the site are responsible for updating the timetable at the beginning of each academic year. Further updates will be based on certain users preferences and activities on the site(Lecturers and Association Executives).
+                        <strong>Administrators</strong> of the site are responsible for updating the timetable at the beginning of each academic year. Further updates will be based on certain users preferences and activities on the site(Lecturers,their Course Reps and Association Executives).
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div id="collapseFive" class="panel-collapse collapse">
                     <div class="card-block">
-                        <strong>Lecturers, Administrators and Association Executives </strong>can edit a booked venue, change associated time and day.
+                        <strong>Lecturers, their Course Reps, Administrators and Association Executives </strong>can edit a booked venue, change associated time and day.
                     </div>
                 </div>
             </div>
@@ -112,7 +112,8 @@
                         <ul>
                             <li>Click on register.</li>
                             <li>Check your mail for link to activate your account.</li>
-                            <li>Then you wait for or <a href='index.php#contact'>contact</a> admin to verify your identity. <small>This step is required to help administrators ensure that only authorized users(Administrators,Lecturers,Association Executives and Security Guards) are allowed to access the members page.</small> </li>
+                            <li>Then you wait for or <a href='#contact'>contact</a> admin to verify your identity. <small>This step is required to help administrators ensure that only authorized users(Administrators,Lecturers,Association Executives and Security Guards) are allowed to access the members page.</small> </li><br>
+                            <li class="text-bold">NOTE: Course Reps are to see their lecturers to register them on the site and follow instructions in their mail in order to register.</li>
                         </ul>
                     </div>
                 </div>
@@ -138,7 +139,7 @@
 
 
 <!-- footer -->
-<?php include 'api/short_footer.php'; ?>
+<?php include 'api/footer.php'; ?>
 
 
 

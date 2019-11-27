@@ -6,9 +6,10 @@
 <style>
   body {
     background: transparent url(img/geeks.jpg) no-repeat center fixed;
-  background-size: cover;
-  color: white;
-  margin-top: 0;
+    background-size: cover;
+    color: white;
+    margin-top: 0;
+    position: relative;
   }
 
   #go-home {

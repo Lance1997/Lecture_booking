@@ -1,17 +1,20 @@
-<div class="container">
-    <div class="row">
-      <div class="well col-md-7">
-          <h4>NOTE</h4>
-          
-                <dl>
-                        <br>
-                      <dt><strong>Edit link</strong></dt>
-                      <dd>Please use <i>Edit</i> to change your booking details.</dd>
-                </dl>
-          
-      </div>
 
+
+<!-- Blog Search Well -->
+<div class="well">
+    <h4>Course Search</h4>
+    <small>Type in your course to view information in the table below.</small>
+    <form class="" action="search.php" method="post">
+    <div class="input-group">
+        <input name="search" type="text" class="form-control">
+        <span class="input-group-btn">
+            <button name="search_course" class="btn btn-default" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+        </button>
+        </span>
     </div>
+  </form> <!-- search Form -->
+    <!-- /.input-group -->
 </div>
 
 
@@ -24,7 +27,7 @@
       <th>Course Code</th>
       <th>Venue</th>
       <th>Time</th>
-      <th>Delete</th>
+      <th>Action</th>
     </tr>
   </thead>
 
@@ -32,12 +35,7 @@
 
     <?php
 
-    $select_query = "SELECT * FROM users WHERE id ='{$_SESSION['id']}'";
-    $select_query_conn = mysqli_query($conn,$select_query);
-    $rowId = mysqli_fetch_assoc($select_query_conn);
-    $myId = $rowId['rep_role'];
-
-    $query = "SELECT * FROM timetable WHERE user_id ='{$myId}'";
+    $query = "SELECT * FROM timetable ORDER BY course_name";
     $select_posts = mysqli_query($conn,$query);
 
     while($row = mysqli_fetch_assoc($select_posts)) {

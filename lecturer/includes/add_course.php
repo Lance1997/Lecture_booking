@@ -32,7 +32,7 @@
 
     <?php
 
-    $query = "SELECT * FROM timetable";
+    $query = "SELECT * FROM timetable ORDER BY course_name";
     $select_posts = mysqli_query($conn,$query);
 
     while($row = mysqli_fetch_assoc($select_posts)) {
@@ -66,23 +66,6 @@
         }
 
       ?>
-
-      <?php
-
-        if(isset($_GET['removeCourse'])) {
-          $rem_course_id = $_GET['removeCourse'];
-
-          $query = "UPDATE timetable SET user_id = '0' WHERE course_id = '{$rem_course_id}' ";
-
-          $query_conn = mysqli_query($conn, $query);
-
-          confirmQuery($query_conn);
-
-          echo "<div class='alert alert-success'> Course has been successfully removed.
-           Click <a href= './courses.php?source=view_all_courses'>here</a> to go to your courses page or stay here and add more courses. </div>";
-        }
-
-       ?>
 
 
 

@@ -3,25 +3,18 @@
 <!-- Blog Search Well -->
 <div class="container">
   <div class="row">
-    <div class="well col-md-7">
+    <div class="well col-md-8">
         <h4>My Association</h4>
         <small>Book a venue and view related information here information in the table below.</small>
-    </div>
-
-
-      <div class="well col-md-4 pull-right">
-          <aside class="login_aside">
-            <h4>NOTE</h4>
-            <small>
+        <h4>NOTE</h4>
+            
                 <dl>
                     <dt><strong>Free Venue link</strong></dt>
                     <dd>Please use <i>Free Venue</i> when you have completed
                       the purpose for which you booked the venue to allow it to be available
                   for others to also book the venue.</dd>
                 </dl>
-            </small>
-          </aside>
-      </div>
+    </div>
 
   </div>
 
@@ -85,24 +78,8 @@
     $query = "DELETE FROM timetable WHERE course_id = {$del_post_id}";
     $del_query = mysqli_query($conn,$query);
     confirmQuery($del_query);
+    header('location: ./courses.php');
+    exit();
   }
 
  ?>
-
- <?php
-
-   if(isset($_GET['remCourse'])) {
-     $rem_course_id = $_GET['remCourse'];
-
-     $query = "UPDATE timetable SET user_id = '0' WHERE course_id = '{$rem_course_id}' ";
-
-     $query_conn = mysqli_query($conn, $query);
-
-     confirmQuery($query_conn);
-     echo "<div class= alert alert-success>Programme has been removed from your list of programs.
-     Click <a href='./courses?add_course'>here</a> to book a new venue.
-     </div>";
-
-   }
-
-  ?>

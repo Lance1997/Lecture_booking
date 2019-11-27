@@ -13,7 +13,7 @@
           $user_name = $row['username'];
     }
 
-    ?>
+?>
 
     
 
@@ -45,6 +45,7 @@
       $query .="userid = '{$user_id}', ";
       $query .="email = '{$user_email}', ";
       $query .="username ='{$user_name}', ";
+      $query .="WHERE id = '{$get_user_id}'";
 
       $update_user = mysqli_query($conn,$query);
       confirmQuery($update_user);

@@ -21,6 +21,9 @@
                 <a class="nav-link" href="/lecture_2/contact.php">Contact Us</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/lecture_2/index.php#about">About Us</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/lecture_2/faq.php">FAQ</a>
               </li>
               <!-- Register Button -->
@@ -38,7 +41,7 @@
                   }else {
 
                    echo "<li class='nav-item'>";
-                   echo "<a class='nav-link bg-primary' style='border-radius: 5px;' href='/lecture_2/{$_SESSION['userrole']}'>{$_SESSION['userrole']}</a>";
+                   echo "<a class='nav-link bg-primary' style='border-radius: 5px;' href='/lecture_2/{$_SESSION['userrole']}'>{$_SESSION['username']}</a>";
                    echo "</li>";
                   }
                }
@@ -51,11 +54,7 @@
                     echo "</li>";                 
                     } elseif($_SESSION['userrole'] == 'student'|| $_SESSION['userrole']=='course_rep') {
                         echo '';
-                    } else {
-                      echo "<li class='nav-item'>";
-                      echo "<a class='btn btn-danger logout text-white nav-link' href='index.php?logout=1'>Logout</a>";
-                      echo "</li>";  
-                 }
+                    }
                   ?>
 
                

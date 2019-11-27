@@ -1,22 +1,10 @@
+<?php ob_start() ?>
 <?php session_start(); ?>
-
-<?php //logout
-
-if (isset($_GET['logout'])) {
-  if (isset($_GET['logout'])) {
-    session_unset();
-    session_destroy();
-    header("location: ./index.php");
-  exit();
-}
-}
-
- ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Homepage</title>
+    <title>Lecture Booking</title>
 
     <!-- Meta Information -->
     <meta charset="utf-8">

@@ -26,7 +26,7 @@
       <th>Course Code</th>
       <th>Venue</th>
       <th>Time</th>
-      <th>Delete</th>
+      <th colspan="2">Action</th>
     </tr>
   </thead>
 
@@ -34,7 +34,7 @@
 
     <?php
 
-    $query = "SELECT * FROM timetable WHERE user_id ='{$_SESSION['id']}'";
+    $query = "SELECT * FROM timetable WHERE user_id ='{$_SESSION['id']}' ORDER BY course_name";
     $select_posts = mysqli_query($conn,$query);
 
     while($row = mysqli_fetch_assoc($select_posts)) {
@@ -51,7 +51,7 @@
       echo "<td>{$course_code} </td>";
       echo "<td>{$venue_name} </td>";
       echo "<td>{$time_for_lecture} </td>";
-      echo "<td><a href='courses.php?source=add_course&removeCourse={$course_id}'>Remove course</a> </td>";
+      echo "<td><a href='courses.php?source=view_all_courses&removeCourse={$course_id}'>Remove course</a> </td>";
       echo "<td><a href='courses.php?source=edit_course&c_id={$course_id}'>Edit</a> </td>";
       echo "</tr>";
     }
@@ -59,6 +59,21 @@
 
      ?>
 
+<?php
+
+if(isset($_GET['removeCourse'])) {
+  $rem_course_id = $_GET['removeCourse'];
+
+  $query = "UPDATE timetable SET user_id = '0' WHERE course_id = '{$rem_course_id}' ";
+
+  $query_conn = mysqli_query($conn, $query);
+
+  confirmQuery($query_conn);
+  header('location: ./courses.php?source=view_all_courses');
+  exit();
+}
+
+?>
 
   </tbody>
 </table>

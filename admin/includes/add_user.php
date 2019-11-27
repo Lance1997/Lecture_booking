@@ -10,53 +10,47 @@
       $user_role = mysqli_real_escape_string($conn,$_POST['userrole']);
       $verified = 0;
       $user_token = bin2hex(random_bytes(50));
-      $pwd = mysqli_real_escape_string($conn,$_POST['pwd']);
+      $pwd = '123456';
       $user_password = password_hash($pwd, PASSWORD_DEFAULT);
 
 
 
       // Validation
-    if(empty($userid)) {
+    if(empty($user_id)) {
         $errors['userid'] = "User ID required";
     } else {
-        $userid = test_input($_POST['userid']);
+        $user_id = test_input($_POST['userid']);
 
         //Checking name for only letters and numbers only
-        if(!preg_match("/^[a-zA-Z0-9]*$/",$userid)) {
+        if(!preg_match("/^[a-zA-Z0-9]*$/",$user_id)) {
             $errors['userid'] = "Only Letters and Numbers allowed. Consider leaving out slashes";
         }
     }
 
-    if(empty($username)) {
+    if(empty($user_name)) {
         $errors['userid'] = "Username required";
     } else {
-        $username = test_input($_POST['username']);
+        $user_name = test_input($_POST['username']);
     }
 
 
     if (empty(@email)) {
         $errors['email'] = "Email required";
     } else {
-            $email = test_input($_POST['email']);
+            $user_email = test_input($_POST['email']);
 
             //Checking for Valid Email
-            $email = filterEmail($_POST['email']);
-            if ($email == FALSE) {
+            $user_email = filterEmail($_POST['email']);
+            if ($user_email == FALSE) {
                 $errors['email'] = "Enter a valid email address.";
             }
-        }
-    if (empty($pwd)) {
-        $errors['pwd'] = "Password is required";
-    } else if(strlen($pwd)< 6) {
-        $errors['pwd'] = "Password must be at least 6 characters";
-    }
-
+          }
 
     //Checking for non existent email in db
     $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
 
     $stmt = $conn->prepare($emailQuery);
-    $stmt->bind_param('s', $email);
+    $stmt->bind_param('s', $user_email);
     $stmt->execute();
     $result = $stmt->get_result();
     $userCount = $result->num_rows;
@@ -70,7 +64,7 @@
     $useridQuery = "SELECT * FROM users WHERE userid=? LIMIT 1";
 
     $stmt = $conn->prepare($useridQuery);
-    $stmt-> bind_param('s', $userid);
+    $stmt-> bind_param('s', $user_id);
     $stmt->execute();
     $result=$stmt->get_result();
     $userCount = $result->num_rows;
@@ -90,7 +84,7 @@
 
       //Confirm QUERY
       confirmQuery($create_user_query);
-      sendVerificationEmailCourseRep($user_email, $user_token);
+      sendVerificationEmail($user_email, $user_token,$pwd);
 
       echo "User Created: " . " " . "<a href='users.php'>View Users</a> ";
     }  
@@ -133,18 +127,14 @@
      </div>
 
      <div class="form-group">
-       <label for="username">Password: </label>
-       <input type="password" name="pwd" class="form-control">
-     </div>
-
-     <div class="form-group">
        <label for="userrole">Select Role: </label>
        <select class="userrole" name="userrole">
          <option value="student">student</option>
          <option value="admin">admin</option>
          <option value="lecturer">lecturer</option>
-          <option value="security">security</option>
-          <option value="association">association</option>
+         <option value="security">security</option>
+         <option value="association">association</option>
+         <option value="course_rep">Course Rep</option>
        </select>
      </div>
 

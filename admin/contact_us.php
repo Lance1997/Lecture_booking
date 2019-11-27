@@ -89,6 +89,8 @@
 
                           $query = "DELETE FROM contact WHERE contact_id = $del_contact_id";
                           $del_query = mysqli_query($conn,$query);
+                          header('location: ./contact_us.php');
+                          exit();
                         }
 
                        ?>

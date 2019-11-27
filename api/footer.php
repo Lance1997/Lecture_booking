@@ -13,10 +13,10 @@
 
         <div class="col-lg-4 col-md-6 col-xs-12 location">
             <h3 id="contact">Contributors</h3>
-            <p><span class= "font-weight-bold">NAME</span>: Albert
+            <p><span class= "font-weight-bold">NAME</span>: Mends Kofi Albert
                               <div>Web Developer</div>
             </p>
-            <p><span class= "font-weight-bold">NAME</span>: Michael
+            <p><span class= "font-weight-bold">NAME</span>: Daniel Adu Sarkodie
                               <div>Web Developer</div>
             </p>
         </div>
@@ -32,7 +32,7 @@
 
 
         <div class="copyright text-center">
-            Copyright &copy; 2019 <span> All rights reserved. Lecture Booking.com</span>
+            Copyright &copy; <?= @date('Y') ?> <span> Lecture Booking.com</span>
             <span id="terms-footer"> <a href="/lecture_2/terms.php">Terms of Service</a> </span>
         </div>
     </div>

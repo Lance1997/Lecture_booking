@@ -53,8 +53,49 @@
     </div>
 
     <div class="form-group">
-      <label for="venue_name">Venue Name<br> <small>Please ensure that name entered is in the following format: ie. G1, LT4, CELT5, AS. Venues entered in different formats will not display on timetable.</small></label>
-      <input type="text" name="venue_code" class="form-control">
+      <label for="day">Choose Venue</label>
+      <select name="venue_code" id="days">
+        <option value="LT1">LT1</option>
+        <option value="LT2">LT2</option>
+        <option value="LT3">LT3</option>
+        <option value="LT4">LT4</option>
+        <option value="LT5">LT5</option>
+        <option value="LT6">LT6</option>
+        <option value="LT7">LT7</option>
+        <option value="LT8">LT8</option>
+        <option value="LT9">LT9</option>
+        <option value="LT10">LT10</option>
+        <option value="LT11">LT11</option>
+        <option value="LT12">LT12</option>
+        <option value="LT13">LT13</option>
+        <option value="LT14">LT14</option>
+        <option value="LT15">LT15</option>
+        <option value="LT16">LT16</option>
+        <option value="LT17">LT17</option>
+        <option value="LT18">LT18</option>
+        <option value="LT19">LT19</option>
+        <option value="LT20">LT20</option>
+        <option value="LT21">LT21</option>
+        <option value="LT22">LT22</option>
+        <option value="CELT1">CELT1</option>
+        <option value="CELT2">CELT2</option>
+        <option value="CELT3">CELT3</option>
+        <option value="CELT4">CELT4</option>
+        <option value="CELT5">CELT5</option>
+        <option value="CELT6">CELT6</option>
+        <option value="CELT7">CELT7</option>
+        <option value="CELT8">CELT8</option>
+        <option value="CELT9">CELT9</option>
+        <option value="CELT10">CELT10</option>
+        <option value="CELT11">CELT11</option>
+        <option value="CELT12">CELT12</option>
+        <option value="G11">G11</option>
+        <option value="G12">G12</option>
+        <option value="G13">G13</option>
+        <option value="G14">G14</option>
+        <option value="G15">G15</option>
+        <option value="G16">G16</option>
+      </select>
     </div>
 
     <div class="form-group">

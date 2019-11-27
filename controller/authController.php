@@ -124,7 +124,7 @@ if (isset($_POST['signup-btn'])) {
             $_SESSION['error_message'] = "A mail has been sent to your email account from <b>lanarmah@gmail.com</b>.
             Please verrify your account from your email.";
             $_SESSION['registered_message'] = "Your email has been successfully verified.";
-            $_SESSION['wait_message'] = "Please wait as admin verifies your identity and assign you a role as per the preferred user role you chose. An email will be sent to you upon successful verification. Click on it to login.";
+            $_SESSION['wait_message'] = "Please wait as admin verifies your identity and assign you a role as per the preferred user role you chose. Contact Admin if this process takes more than 24hours.";
 
             header('Location: welcome.php');
             exit();
@@ -246,7 +246,9 @@ if (isset($_POST['reset-password'])) {
     // Grab to token that came from the email link
     $token = $_SESSION['token'];
     $email = $_SESSION['email'];
+    
     if (empty($new_pass) || empty($new_pass_c)) array_push($errors, "Password is required");
+    if(strlen($new_pass)<6) array_push($errors, 'Password is too short. Must be at least 6 characters.');
     if ($new_pass !== $new_pass_c) array_push($errors, "Password do not match");
     if (count($errors) == 0) {
       // select email address of user from the user table
@@ -258,16 +260,20 @@ if (isset($_POST['reset-password'])) {
       $stmt->execute();
       $result = $stmt->get_result();
       $user = $result->fetch_assoc();
-      $userid = $user['userid'];
+      $userid = $user['id'];
 
         $new_pass = password_hash($new_pass, PASSWORD_DEFAULT);
-        $sql = "UPDATE users SET pwd='$new_pass' WHERE userid='$userid'";
+        $sql = "UPDATE users SET pwd='$new_pass' WHERE id='$userid'";
         $results = mysqli_query($conn,$sql);
         if($results) {
-          echo '<div class="alert'.$_SESSION['alert-class'].'">'.$_SESSION['tok'].'</div>';
+          echo "<script>";
+          echo "swal('Success!', 'Password has been successfully changed!', 'success');";
+          echo "</script>";
 
         }else {
-          echo "Error: Password could not be changed!";        }
+          echo "<script>";
+          echo "swal('Error.!', 'Password could not be changed!', 'error');";
+          echo "</script>";        }
       }
     }
 
@@ -350,7 +356,7 @@ if (isset($_POST['reset-password'])) {
       // Validation
       if(empty($suggestion)) {
         echo "<script>";
-        echo "swal('Try Again.!', 'Suggestion box is empty!', 'warning');";
+        echo "swal('Try Again.!', 'Suggestion box is empty!', 'error');";
         echo "</script>";
       } else{
 

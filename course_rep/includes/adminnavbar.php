@@ -37,7 +37,7 @@
             </li>
             
             <li>
-                    <a href="./courses.php?source=view_all_courses">View Lecturer's timetable</a>
+                <a href="./courses.php?source=view_all_courses">View my timetable</a>
             </li>
             
             <li>

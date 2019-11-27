@@ -55,7 +55,42 @@
                              </div>
                          </div>
                      </div>
-                     <a href="./courses.php">
+                     <a href="./courses.php?source=view_all_courses">
+                         <div class="panel-footer">
+                             <span class="pull-left">View Details</span>
+                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                             <div class="clearfix"></div>
+                         </div>
+                     </a>
+                 </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                 <div class="panel panel-primary">
+                     <div class="panel-heading">
+                         <div class="row">
+                             <div class="col-xs-3">
+                                 <i class="fa fa-book fa-5x"></i>
+                             </div>
+                             <div class="col-xs-9 text-right">
+
+                               <?php
+
+                                    $query = "SELECT * FROM users WHERE rep_role = '{$_SESSION['id']}'";
+
+                                    $select_query = mysqli_query($conn,$query);
+
+                                    confirmQuery($select_query);
+
+                                    $rep_count = mysqli_num_rows($select_query);
+
+                                    echo "<div class='huge'>$rep_count</div>";
+                                ?>
+                                 <div>My Course Reps</div>
+                             </div>
+                         </div>
+                     </div>
+                     <a href="./users.php">
                          <div class="panel-footer">
                              <span class="pull-left">View Details</span>
                              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -65,6 +100,10 @@
                  </div>
                 </div>
               </div>
+
+              
+              
+              
 
               <!-- GRAPH -->
 
@@ -133,7 +172,7 @@
                       $friday_count = mysqli_num_rows($select_query);
 
                    ?>
-              <div class="row" style="margin-top:20px; overflow:auto" >
+              <div class="row" style="margin-top:20px;" >
 
                 <script type="text/javascript">
                     google.charts.load('current', {'packages':['bar']});

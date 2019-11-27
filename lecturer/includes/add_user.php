@@ -28,7 +28,7 @@
 
         //Checking name for only letters and numbers only
         if(!preg_match("/^[a-zA-Z0-9]*$/",$user_id)) {
-            $errors['userid'] = "Only Letters and Numbers allowed. Consider leaving out slashes";
+            $errors['userid'] = "Only Letters and Numbers allowed in Student ID. Consider leaving out slashes";
         }
     }
 
@@ -95,9 +95,7 @@
       Course Rep Created: " . " " . "<a href='users.php'>View Course Reps</a>
       </div> ";
     }  
-      else {
-        $errors['db_error'] = "Database error: failed to register";
-        }
+      
 
 
     }
@@ -125,7 +123,7 @@
   <?php endif; ?>
 
      <div class="form-group">
-       <label for="userid">User ID: </label>
+       <label for="userid">Student ID: </label>
        <input  type="text" name="userid" class="form-control">
      </div>
 

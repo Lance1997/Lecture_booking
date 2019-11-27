@@ -21,8 +21,6 @@
     <?php
     if(isset($_POST['update_course'])) {
 
-      $course_name = mysqli_real_escape_string($conn,trim($_POST['course_name']));
-      $course_code = mysqli_real_escape_string($conn,trim($_POST['course_code']));
       $venue_name = mysqli_real_escape_string($conn,trim($_POST['venue_code']));
       $day_lect = mysqli_real_escape_string($conn,trim($_POST['day_lect']));
       $time_of_lecture = mysqli_real_escape_string($conn,trim($_POST['time_of_lecture']));
@@ -41,8 +39,6 @@
 
 
       $query = "UPDATE timetable SET ";
-      $query .= "course_name = '{$course_name}',";
-      $query .="course_code ='{$course_code}', ";
       $query .="venue_code ='{$venue_name}', ";
       $query .="day_lect ='{$day_lect}', ";
       $query .="time_of_lecture ='{$time_of_lecture}' ";
@@ -72,19 +68,18 @@
 
   <div class="form-group">
     <label for="title">Course Name</label>
-    <input value="<?php echo $course_name ?>" type="text" name="course_name" class="form-control">
+    <input value="<?php echo $course_name ?>" type="text" name="course_name" class="form-control" disabled>
   </div>
 
   <div class="form-group">
     <label for="post_author">Course Code</label>
-    <input value = "<?php echo $course_code ?>" type="text" name="course_code" class="form-control">
+    <input value = "<?php echo $course_code ?>" type="text" name="course_code" class="form-control" disabled>
   </div>
 
-  <div class="form-group">
-    <label for="post_status">Venue Name<br> <small>Please ensure that name entered is in the following format: ie. G1, LT4, CELT5, AS. Venues entered in different formats will not display on timetable.</small></label>
-    <input value = "<?php echo $venue_name ?>" type="text" name="venue_code" class="form-control">
-  </div>
+  
+  <?php include './includes/choose_venue.php'; ?>
 
+  
   <div class="form-group">
     <labelday for="">Choose Day</label>
     <select name="day_lect" id="days">

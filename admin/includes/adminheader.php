@@ -1,4 +1,4 @@
-
+<?php ob_start() ?>
 <?php session_start(); ?>
 
 <!-- DB Require -->
@@ -20,7 +20,7 @@ if (isset($_GET['logout'])) {
 
 <?php
 
-$time_to_unset = (60);
+$time_to_unset = (60*15);
 if (!isset($_SESSION['timeout_idle'])) {
     $_SESSION['timeout_idle'] = time() + ($time_to_unset);
 } else {
@@ -42,7 +42,7 @@ if($_SESSION["userrole"] !== $roleadm){
 header("location: ../login.php");
 exit();
 } elseif (!$_SESSION['verified']) {
-header('location: welcome.php');
+header('location:../ welcome.php');
 exit();
 }
  ?>

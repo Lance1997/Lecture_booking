@@ -836,7 +836,7 @@
   </main>
 
   <!-- Footer -->
-  <?php include_once '../api/short_footer.php'; ?>
+  <?php include_once '../api/footer.php'; ?>
 
 
     <!-- SCRIPTS -->

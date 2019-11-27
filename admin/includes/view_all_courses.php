@@ -35,7 +35,7 @@
 
     <?php
 
-    $query = "SELECT * FROM timetable";
+    $query = "SELECT * FROM timetable ORDER BY course_name";
     $select_posts = mysqli_query($conn,$query);
 
     while($row = mysqli_fetch_assoc($select_posts)) {
@@ -74,6 +74,7 @@
 
     $query = "DELETE FROM timetable WHERE course_id = {$del_post_id}";
     $del_query = mysqli_query($conn,$query);
+    header('location: ./courses.php');
 
   }
 
