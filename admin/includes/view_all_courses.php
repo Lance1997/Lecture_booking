@@ -28,6 +28,8 @@
       <th>Venue</th>
       <th>Time</th>
       <th>Purpose</th>
+      <th>Approval</th>
+      <th colspan="4">Action</th>
     </tr>
   </thead>
 
@@ -46,6 +48,7 @@
       $venue_name = $row['venue_code'];
       $time_for_lecture = $row['time_of_lecture'];
       $purpose_for_lecture = $row['purpose'];
+      $approval = $row['approval'];
 
       echo "<tr>";
       echo "<td>{$day_lect}</td>";
@@ -54,6 +57,9 @@
       echo "<td>{$venue_name} </td>";
       echo "<td>{$time_for_lecture} </td>";
       echo "<td>{$purpose_for_lecture} </td>";
+      echo "<td>{$approval} </td>";
+      echo "<td><a href='courses.php?source=view_all_courses&unapprove={$course_id}'>Disable</a> </td>";
+      echo "<td><a href='courses.php?source=view_all_courses&approve={$course_id}'>Enable</a> </td>";
       echo "<td><a href='courses.php?source=edit_course&c_id={$course_id}'>Edit</a> </td>";
       echo "<td><a href='courses.php?deleteCourse={$course_id}'>Delete</a> </td>";
       echo "</tr>";
@@ -79,3 +85,36 @@
   }
 
  ?>
+
+<?php
+
+if(isset($_GET['approve'])) {
+  $app_course_id = $_GET['approve'];
+  $approve = 'enabled';
+
+  $query = "UPDATE timetable SET approval = '{$approve}' WHERE course_id = '{$app_course_id}' ";
+
+  $query_conn = mysqli_query($conn, $query);
+
+  confirmQuery($query_conn);
+  header('location: ./courses.php?source=view_all_courses');
+  exit();
+}
+
+?>
+
+<?php
+
+if(isset($_GET['unapprove'])) {
+  $app_course_id = $_GET['unapprove'];
+
+  $query = "UPDATE timetable SET approval = 'disabled' WHERE course_id = '{$app_course_id}' ";
+
+  $query_conn = mysqli_query($conn, $query);
+
+  confirmQuery($query_conn);
+  header('location: ./courses.php?source=view_all_courses');
+  exit();
+}
+
+?>

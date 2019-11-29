@@ -3,8 +3,8 @@ require_once 'vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
-    ->setUsername("lanarmah@gmail.com")
-    ->setPassword("mysuccess@csafrica.com");
+    ->setUsername("lecturebooking1@gmail.com")
+    ->setPassword("admin12!@");
 
 // Create the Mailer using your created Transport
 $mailer = new Swift_Mailer($transport);
@@ -50,8 +50,8 @@ function sendVerificationEmail($email, $token)
 
     // Create a message
     $message = (new Swift_Message('Verify your email'))
-        ->setFrom("lanarmah@gmail.com")
-        ->setTo("lanarmah@gmail.com")
+        ->setFrom("lecturebooking1@gmail.com")
+        ->setTo($email)
         ->setBody($body, 'text/html');
 
     // Send the message
@@ -112,7 +112,7 @@ function sendVerificationEmailToAdmin($email, $userid, $preRole, $username)
     // Create a message
     $message = (new Swift_Message('Verify User'))
         ->setFrom($email)
-        ->setTo("lanarmah@gmail.com")
+        ->setTo("lecturebooking1@gmail.com")
         ->setBody($body, 'text/html');
 
     // Send the message

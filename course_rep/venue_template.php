@@ -40,7 +40,8 @@
 
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='6:30-7:30am' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='6:30-7:30am' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -93,7 +94,8 @@
                                              <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='7:30-8:30am' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='7:30-8:30am' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -149,7 +151,8 @@
                                              <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='8:30-9:30am' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='8:30-9:30am' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -205,7 +208,8 @@
                                              <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='9:30-10:30am' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='9:30-10:30am' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -261,7 +265,8 @@
                                             <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='10:30-11:30am' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='10:30-11:30am' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -316,7 +321,8 @@
                                             <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='11:30-12:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='11:30-12:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -372,7 +378,8 @@
                                             <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='12:30-13:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='12:30-13:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -428,7 +435,8 @@
                                             <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='13:30-14:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='13:30-14:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -483,7 +491,8 @@
                                              <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='14:30-15:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='14:30-15:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -539,7 +548,8 @@
                                               <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='15:30-16:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='15:30-16:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -597,7 +607,8 @@
                                              <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='16:30-17:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='16:30-17:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -653,7 +664,8 @@
                                             <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='17:30-18:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='17:30-18:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -709,7 +721,8 @@
                                            <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='18:30-19:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='18:30-19:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];
@@ -765,7 +778,8 @@
                                            <?php
                                               if(isset($_GET['venue_code'])) {
                                               $course_venue = $_GET['venue_code'];
-                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='19:30-10:30pm' AND venue_code='$course_venue'";
+                                              $approval = 'enabled';
+                                              $sql = "SELECT * FROM timetable WHERE time_of_lecture ='19:30-10:30pm' AND venue_code='$course_venue' AND approval = '$approval' ";
                                               $result = mysqli_query($conn,$sql);
                                               while($row = mysqli_fetch_assoc($result)) {
                                                $course_name = $row["course_name"];

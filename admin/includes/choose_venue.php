@@ -1,7 +1,7 @@
 <div class="form-group">
       <label for="day">Choose Venue</label>
       
-      <select name="venue_code" id="days">
+      <select name="venue_code" id="days" class="form-control">
         <option value="<?= $venue_name ?>"><?= $venue_name ?></option>
           <?php
               if ($venue_name == 'LT1') {

@@ -26,6 +26,7 @@
       $venue_name = mysqli_real_escape_string($conn,trim($_POST['venue_code']));
       $day_lect = mysqli_real_escape_string($conn,trim($_POST['day_lect']));
       $time_of_lecture = mysqli_real_escape_string($conn,trim($_POST['time_of_lecture']));
+      $approval = 'enabled';
 
 
        $select_query = "SELECT * FROM timetable WHERE day_lect = '{$day_lect}' AND time_of_lecture = '{$time_of_lecture}' AND venue_code = '{$venue_name}'";
@@ -45,6 +46,7 @@
       $query .="course_code ='{$course_code}', ";
       $query .="venue_code ='{$venue_name}', ";
       $query .="day_lect ='{$day_lect}', ";
+      $query .="approval ='{$approval}', ";
       $query .="time_of_lecture ='{$time_of_lecture}' ";
       $query .="WHERE course_id = '{$get_course_id}'";
 
@@ -80,7 +82,7 @@
 
   <div class="form-group">
     <label for="">Choose Day</label>
-    <select name="day_lect" id="days">
+    <select name="day_lect" id="days" class="form-control">
       <option value="<?php echo $day_lect ?>"><?php echo $day_lect ?></option>
       <?php
 
@@ -125,7 +127,7 @@
 
   <div class="form-group">
     <label for="time">Choose Time:  </label>
-    <select name="time_of_lecture" id="time">
+    <select name="time_of_lecture" id="time" class="form-control">
       <option value="<?php echo $time_of_lecture ?>"><?php echo $time_of_lecture ?></option>
              <?php
 

@@ -15,6 +15,7 @@
           $verified = $row['verified'];
           $user_token = $row['token'];
           $user_password = $row['pwd'];
+          $preRole = $row['preRole'];
     }
 
     ?>
@@ -109,6 +110,11 @@
     </div>
 
     <div class="form-group">
+    <label for="preRole">Preferred Role: </label>
+        <input type="text" value = "<?php echo $preRole; ?>" class="form-control" disabled="disabled">
+    </div>
+
+    <div class="form-group">
       <label for="username">Username: </label>
       <input value = "<?php echo $user_name; ?>" type="text" name="username" class="form-control" required>
     </div>
@@ -120,7 +126,7 @@
 
     <div class="form-group">
       <label for="userrole">Select Role: </label>
-      <select class="userrole" name="userrole">
+      <select class="userrole" name="userrole" class="form-control">
         <option value="<?php echo $user_role ?>"><?php echo $user_role ?></option>
 
         <?php 
@@ -172,7 +178,7 @@
 
     <div class="form-group">
       <label for="verified">Select Verification: </label>
-      <select class="verify" name="verified">
+      <select class="verify" name="verified" class="form-control">
         <option value="<?php echo $verified ?>"><?php echo $verified ?></option>
         <?php 
 

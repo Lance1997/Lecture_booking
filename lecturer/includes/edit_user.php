@@ -19,7 +19,7 @@
 
     <?php
 
-    $errors = '';
+    $errors = array();
 
     if(isset($_POST['update_user'])) {
 
@@ -44,7 +44,7 @@
       $query = "UPDATE users SET ";
       $query .="userid = '{$user_id}', ";
       $query .="email = '{$user_email}', ";
-      $query .="username ='{$user_name}', ";
+      $query .="username ='{$user_name}' ";
       $query .="WHERE id = '{$get_user_id}'";
 
       $update_user = mysqli_query($conn,$query);
@@ -72,7 +72,13 @@
 
 
 <form action="" method="post">
-
+            <?php if (count($errors) > 0): ?>
+              <div class="alert alert-danger">
+                <?php foreach($errors as $error): ?>
+                  <li><?php echo $error; ?></li>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
     <div class="form-group">
       <label for="userid">User ID: </label>
       <input value = "<?php echo $user_id; ?>"  type="text" name="userid" class="form-control" required>
@@ -82,7 +88,6 @@
     <div class="form-group">
       <label for="email">Email: </label>
       <input value = "<?php echo $user_email; ?>" type="text" name="email" class="form-control" required>
-      <span class="help-block"><?php echo "<div class= 'text-warning'>".$errors."</div>"; ?></span>
     </div>
 
     <div class="form-group">

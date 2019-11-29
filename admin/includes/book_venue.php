@@ -9,12 +9,24 @@
       $venue_name =mysqli_real_escape_string($conn,trim($_POST['venue_code']));
       $day_lect =mysqli_real_escape_string($conn,trim($_POST['day_lect']));
       $purpose_for_lecture =mysqli_real_escape_string($conn,trim($_POST['purpose']));
+      $approval = 'enabled';
 
       $time_of_lecture =mysqli_real_escape_string($conn,trim($_POST['time_of_lecture']));
 
-      $query = "INSERT INTO timetable(user_id,course_name,course_code,venue_code,purpose,day_lect,time_of_lecture)";
+      $select_query = "SELECT * FROM timetable WHERE day_lect = '{$day_lect}' AND time_of_lecture = '{$time_of_lecture}' AND venue_code = '{$venue_name}'";
+      $select_query_conn = mysqli_query($conn,$select_query);
+      confirmQuery($select_query_conn);
 
-      $query .= "VALUES('{$id}','{$course_name}','{$course_code}','{$venue_name}','{$purpose_for_lecture}','{$day_lect}','{$time_of_lecture}') ";
+      $numRows = mysqli_num_rows($select_query_conn);
+
+      if($numRows > 0) {
+        echo "<div class='alert alert-warning'>Please Check Timetable Again. It is either You selected the same time and venue or the Venue is occupied!</div>";
+      }
+
+      else {
+      $query = "INSERT INTO timetable(user_id,course_name,course_code,venue_code,purpose,day_lect,time_of_lecture,approval)";
+
+      $query .= "VALUES('{$id}','{$course_name}','{$course_code}','{$venue_name}','{$purpose_for_lecture}','{$day_lect}','{$time_of_lecture}','{$approval}' ) ";
 
       $book_venue_query = mysqli_query($conn,$query);
 
@@ -24,6 +36,7 @@
       if($book_venue_query) {
         echo "Venue Booked: " . " " . "<a href='courses.php'>View Booked Venues</a> ";
       }
+    }
 
     }
 
@@ -125,7 +138,7 @@
         <option value="15:30-16:30pm"  >15:30-16:30pm</option>
         <option value="16:30-17:30pm"  >16:30-17:30pm</option>
         <option value="17:30-18:30pm"  >17:30-18:30pm</option>
-        <option value="8:30-19:30pm"  >18:30-19:30pm</option>
+        <option value="18:30-19:30pm"  >18:30-19:30pm</option>
         <option value="19:30-20:30pm"  >19:30-20:30pm</option>
       </select>
     </div>

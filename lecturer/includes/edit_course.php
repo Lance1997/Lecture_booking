@@ -77,9 +77,10 @@
 
   <?php include './includes/choose_venue.php'; ?>
 
+
   <div class="form-group">
-    <labelday for="day_lect"><b>Choose Day</b></label>
-    <select name="day_lect" id="days">
+    <label for="day_lect"><b>Choose Day</b></label>
+    <select name="day_lect" id="days" class="form-control">
       <option value="<?php echo $day_lect ?>"><?php echo $day_lect ?></option>
       <?php
 
@@ -124,7 +125,7 @@
 
   <div class="form-group">
     <label for="time">Choose Time:  </label>
-    <select name="time_of_lecture" id="time">
+    <select name="time_of_lecture" id="time" class="form-control">
       <option value="<?php echo $time_of_lecture ?>"><?php echo $time_of_lecture ?></option>
               <?php
 
